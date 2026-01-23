@@ -98,7 +98,12 @@ A: Yes, currently it uses float32. Float16 should be significantly faster(almost
 - [x] Release model and code
 - [ ] Huggingface spaces demo
 - [ ] Release code for float16 inference
-      
+
+## Acknowledgments
+
+- [ZipVoice](https://github.com/k2-fsa/ZipVoice) for their excellent code and model.
+- [Vocos](https://github.com/gemelo-ai/vocos.git) for their great vocoder.
+  
 ## Final Notes
 
 This project is licensed under the Apache-2.0 license. See LICENSE for details.
