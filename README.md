@@ -57,14 +57,15 @@ prompt_audio = 'audio_file.wav'
 encoded_prompt = lux_tts.encode_prompt(prompt_audio, rms=0.01)
 
 ## generate speech
-final_wav = lux_tts.generate_speech(text, encoded_prompt, num_steps=num_steps)
+final_wav = lux_tts.generate_speech(text, encoded_prompt, num_steps=4)
 
 ## save audio
 final_wav = final_wav.numpy().squeeze()
-sf.write('output.wav', audio_data, 48000)
+sf.write('output.wav', final_wav, 48000)
 
 ## display speech
-display(Audio(final_wav, rate=48000))
+if display is not None:
+  display(Audio(final_wav, rate=48000))
 ```
 
 #### Inference with sampling params:
@@ -92,10 +93,11 @@ final_wav = lux_tts.generate_speech(text, encoded_prompt, num_steps=num_steps, t
 
 ## save audio
 final_wav = final_wav.numpy().squeeze()
-sf.write('output.wav', audio_data, 48000)
+sf.write('output.wav', final_wav, 48000)
 
 ## display speech
-display(Audio(final_wav, rate=48000))
+if display is not None:
+  display(Audio(final_wav, rate=48000))
 ```
 ## Tips
 - Please use at minimum a 3 second audio file for voice cloning.
